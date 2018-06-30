@@ -2,14 +2,14 @@ package com.acme.a3csci3130;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.Spinner;
 
-public class CreateContactAcitivity extends Activity implements AdapterView
+public class CreateContactActivity extends Activity implements AdapterView
         .OnItemSelectedListener {
 
     private Button submitButton;
@@ -19,9 +19,8 @@ public class CreateContactAcitivity extends Activity implements AdapterView
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_contact_acitivity);
+        setContentView(R.layout.activity_create_contact_activity);
         //Get the app wide shared variables
         appState = ((MyApplicationData) getApplicationContext());
 
@@ -33,7 +32,6 @@ public class CreateContactAcitivity extends Activity implements AdapterView
         addressField = (EditText) findViewById(R.id.address);
         provinceField = (Spinner) findViewById(R.id.province);
         //provinceField.setOnItemSelectedListener(this);
-
     }
 
     public void onItemSelected(AdapterView<?> parent, View view,

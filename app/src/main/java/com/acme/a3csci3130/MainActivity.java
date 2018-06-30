@@ -47,13 +47,8 @@ public class MainActivity extends Activity {
             // onItemClick method is called everytime a user clicks an item on the list
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Log.d("debug.print", "\nMA position=" + position);
                 Contact person = (Contact) firebaseAdapter.getItem(position);
                 //position = position in list view
-                Log.d("debug.print", "\nMA CONTACT OBJECT");
-                Log.d("debug.print", "MA uid=" + person.uid);
-                Log.d("debug.print", "MA email=" + person.email);
-                Log.d("debug.print", "MA name=" + person.name);
 
                 showDetailView(person);
             }
@@ -62,7 +57,7 @@ public class MainActivity extends Activity {
 
     public void createContactButton(View v)
     {
-        Intent intent=new Intent(this, CreateContactAcitivity.class);
+        Intent intent=new Intent(this, CreateContactActivity.class);;
         startActivity(intent);
     }
 

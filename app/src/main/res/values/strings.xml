@@ -3,6 +3,7 @@
     <string name="title_activity_list">ListActivity</string>
 
     <string-array name="primary_business">
+        <item></item>
         <item>Fisher</item>
         <item>Distributor</item>
         <item>Processor</item>
