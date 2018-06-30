@@ -7,41 +7,68 @@
     tools:context="com.acme.a3csci3130.CreateContactAcitivity">
 
     <EditText
-        android:layout_width="395dp"
+        android:id="@+id/address"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/name"
-        android:hint = "Name"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toRightOf="parent"
         android:layout_marginTop="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginStart="8dp" />
+        android:hint="Address"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/primary_business" />
+
+    <Spinner
+        android:id="@+id/province"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:entries="@array/province"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/address"
+        android:drawSelectorOnTop="true"/>
+
+    <Spinner
+        android:id="@+id/primary_business"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:entries="@array/primary_business"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name"
+        android:drawSelectorOnTop="true"/>
+
 
     <EditText
-        android:id="@+id/email"
-        android:layout_width="395dp"
+        android:id="@+id/business_number"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:hint="e-mail"
+        android:layout_marginTop="16dp"
+        android:hint="Business Number"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/name"
-        android:layout_marginLeft="8dp"
+        android:hint="Name"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginStart="8dp" />
+        app:layout_constraintTop_toBottomOf="@+id/business_number" />
 
     <Button
         android:id="@+id/submitButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Create Contact"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/email"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
         android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="44dp"
         android:onClick="submitInfoButton"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp" />
+        android:text="Create Contact"
+        app:layout_constraintHorizontal_bias="0.502"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/province" />
+
+
 
 </android.support.constraint.ConstraintLayout>
