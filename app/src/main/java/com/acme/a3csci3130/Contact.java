@@ -14,11 +14,11 @@ import java.util.Map;
 
 public class Contact implements Serializable {
 
-    public  String uid;
+    public String uid;
     public String business_number;
-    public  String name;
+    public String name;
     public String primary_business;
-    public  String address;
+    public String address;
     public String province;
 
     public Contact() {

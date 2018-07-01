@@ -6,14 +6,29 @@
     android:layout_height="match_parent"
     tools:context="com.acme.a3csci3130.DetailViewActivity">
 
+    <TextView
+        android:id="@+id/rules"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        tools:layout_editor_absoluteX="19dp"
+        tools:layout_editor_absoluteY="6dp"
+        android:text="Fill in the required fields to update a business. Please ensure the following are met:\n
+            Business Number: required, 9-digit number\n
+            Name: required, 2-48 characters\n
+            Primary Business: required, select from drop-down\n
+            Address: less than 50 characters\n
+            Province/ Territory: required, select from drop-down"
+        />
+
     <EditText
         android:id="@+id/business_number"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:hint="Business Number"
         app:layout_constraintLeft_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/rules"/>
 
     <EditText
         android:id="@+id/name"
@@ -54,29 +69,34 @@
         app:layout_constraintTop_toBottomOf="@+id/address"
         android:drawSelectorOnTop="true"/>
 
+    <TextView
+        android:id="@+id/error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/province" />
+
     <Button
         android:id="@+id/updateButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
+        android:onClick="updateContact"
         android:text="Update Data"
-        app:layout_constraintTop_toBottomOf="@+id/province"
-        android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginStart="8dp"
-        android:onClick="updateContact"/>
+        app:layout_constraintTop_toBottomOf="@+id/error" />
 
     <Button
         android:id="@+id/deleteButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:onClick="eraseContact"
         android:text="Erase Contact"
-        android:layout_marginTop="50dp"
-        app:layout_constraintTop_toBottomOf="@+id/province"
-        android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginEnd="8dp"
-        android:onClick="eraseContact"/>
+        app:layout_constraintTop_toBottomOf="@+id/error" />
+
 
 
 

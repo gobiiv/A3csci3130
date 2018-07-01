@@ -4,16 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.acme.a3csci3130.CreateContactAcitivity">
+    tools:context="com.acme.a3csci3130.CreateContactActivity">
+
+    <TextView
+        android:id="@+id/rules"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Fill in the required fields to add a new business. Please ensure the following are met:\n
+            Business Number: required, 9-digit number\n
+            Name: required, 2-48 characters\n
+            Primary Business: required, select from drop-down\n
+            Address: less than 50 characters\n
+            Province/ Territory: required, select from drop-down"
+        tools:layout_editor_absoluteX="19dp"
+        tools:layout_editor_absoluteY="6dp"
+        android:padding="10dp" />
 
     <EditText
         android:id="@+id/business_number"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:hint="Business Number"
         app:layout_constraintLeft_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/rules"/>
 
     <EditText
         android:id="@+id/name"
@@ -23,7 +37,6 @@
         android:hint="Name"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/business_number" />
-
 
     <Spinner
         android:id="@+id/primary_business"
@@ -54,21 +67,24 @@
         app:layout_constraintTop_toBottomOf="@+id/address"
         android:drawSelectorOnTop="true"/>
 
+
+    <TextView
+        android:id="@+id/error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/province" />
+
     <Button
         android:id="@+id/submitButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginTop="44dp"
         android:onClick="submitInfoButton"
         android:text="Create Contact"
-        app:layout_constraintHorizontal_bias="0.502"
 
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/province" />
-
+        app:layout_constraintTop_toBottomOf="@+id/error" />
 
 
 </android.support.constraint.ConstraintLayout>

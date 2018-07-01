@@ -8,6 +8,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 public class CreateContactActivity extends Activity implements AdapterView
         .OnItemSelectedListener {
@@ -52,12 +53,16 @@ public class CreateContactActivity extends Activity implements AdapterView
         String primary_business = primary_businessField.getSelectedItem().toString();
         String address = addressField.getText().toString();
         String province = provinceField.getSelectedItem().toString();
+        Validator val = new Validator();
+        if(val.validate(business_number, name, primary_business, address, province)){
+            Contact person = new Contact(uid, business_number, name, primary_business, address, province);
+            appState.firebaseReference.child(uid).setValue(person);
+            finish();
+        } else {
+            TextView err = (TextView) findViewById(R.id.error);
+            err.setText("Invalid! Please verify fields.");
+        }
 
-        Contact person = new Contact(uid, business_number, name, primary_business, address, province);
-
-        appState.firebaseReference.child(uid).setValue(person);
-
-        finish();
 
     }
 }
